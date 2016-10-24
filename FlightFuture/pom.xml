@@ -3,15 +3,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>FlightFurure</groupId>
-    <artifactId>FlightFurure</artifactId>
+    <groupId>FlightFuture</groupId>
+    <artifactId>FlightFuture</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
     <modules>
         <module>System</module>
-        <module>SlotService</module>
     </modules>
 
 </project>
