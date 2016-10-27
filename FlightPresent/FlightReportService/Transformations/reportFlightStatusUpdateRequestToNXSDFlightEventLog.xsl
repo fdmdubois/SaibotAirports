@@ -35,6 +35,42 @@
   </oracle-xsl-mapper:schema>
   <!--User Editing allowed BELOW this line - DO NOT DELETE THIS LINE-->
   <xsl:template match="/">
-    <tns:FlightEventLog/>
+    <tns:FlightEventLog>
+      <tns:FlightEventLogEntry>
+        <tns:FlightDate>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightDate"/>
+        </tns:FlightDate>
+        <tns:Aircarrier>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:Carrier"/>
+        </tns:Aircarrier>
+        <tns:FlightNumber>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightNumber"/>
+        </tns:FlightNumber>
+        <tns:StatusTimestamp>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:Status"/>
+        </tns:StatusTimestamp>
+        <tns:NewStatus>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:Status"/>
+        </tns:NewStatus>
+        <tns:Action>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:Action"/>
+        </tns:Action>
+        <tns:Terminal>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:GateLocation/reference:Terminal"/>
+        </tns:Terminal>
+        <tns:Pier>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:GateLocation/reference:Pier"/>
+        </tns:Pier>
+        <tns:Gate>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:GateLocation/reference:Gate"/>
+        </tns:Gate>
+        <tns:Runway>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:Runway"/>
+        </tns:Runway>
+        <tns:CheckinCounter>
+          <xsl:value-of select="/ns0:reportFlightStatusUpdateRequestMessage/ns0:flightStatusEvent/ns0:FlightStatus/flight:CheckinCounter"/>
+        </tns:CheckinCounter>
+      </tns:FlightEventLogEntry>
+    </tns:FlightEventLog>
   </xsl:template>
 </xsl:stylesheet>
